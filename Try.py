@@ -56,7 +56,4 @@ print(a.dtype) """
 # print(nemo.eyes)
 # nemo.breathe()
 
-from math import trunc
-
-
-trunc()
+print('Ji')
