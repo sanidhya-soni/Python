@@ -33,16 +33,16 @@ while len(guessed_states) < 50:
     elif answer_state == 'Exit':
         break
 
-states_not_guessed  = []
+# states_not_guessed  = []
+#
+# for i in all_states:
+#     if i not in guessed_states:
+#         states_not_guessed.append(i)
+#
+# new_dict = {
+#     'states': states_not_guessed
+# }
 
-for i in all_states:
-    if i not in guessed_states:
-        states_not_guessed.append(i)
-
-new_dict = {
-    'states': states_not_guessed
-}
-
-new_data = pd.DataFrame(new_dict)
+new_data = pd.DataFrame([s for s in all_states if s not in guessed_states])
 
 new_data.to_csv('states_to_learn.csv')
