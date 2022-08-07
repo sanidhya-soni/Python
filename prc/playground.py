@@ -11,3 +11,6 @@ def calculate(**kwargs):
 
 
 calculate(name='Sani', age=21, sex='male')
+
+class Car:
+    def __init__(self, **kw):
