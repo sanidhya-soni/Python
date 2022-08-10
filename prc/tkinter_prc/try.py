@@ -26,8 +26,4 @@ button.pack()
 input = Entry(width=10)
 input.pack()
 
-print(input.get())
-
-
-
 window.mainloop()
