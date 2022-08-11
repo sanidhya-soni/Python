@@ -73,3 +73,8 @@ print(arr2d[:2, 1:])
 print(arr2d[1, :2])
 
 print(arr3d[1:, :1, 1:])
+
+# Boolean Indexing
+names = np.array(['Sani', 'Rashi', 'Trump', 'Sani', 'Trump', 'Rashi', 'Sani'])
+data = np.random.randint(1, 4, (7, 3))
+print(data)
