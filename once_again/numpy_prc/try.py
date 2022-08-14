@@ -75,6 +75,31 @@ print(arr2d[1, :2])
 print(arr3d[1:, :1, 1:])
 
 # Boolean Indexing
-names = np.array(['Sani', 'Rashi', 'Trump', 'Sani', 'Trump', 'Rashi', 'Sani'])
-data = np.random.randint(1, 4, (7, 3))
+names = np.array(['Sani', 'Rashi', 'Trump', 'Sani', 'Trump', 'Rashi', 'Sanidhya'])
+# data = np.random.randint(1, 11, (5, 3))  # randint(lower_limit, upper_limit, ()tuple for 2d or 3d array)
+data = np.random.randn(7, 4)  # Keep length same as that of boolean array
 print(data)
+print(names == 'Sani')
+print(data[names == 'Sani'])
+print(data[names == 'Sani', 2:])
+print(data[names == 'Sani', 3])  # 3rd column will be selected
+
+print(~(names == 'Sani'))  # ~ can be used instead of ! hence '!=' == ~(condition)
+print(data[~(names == 'Sani')])
+
+print((names == 'Sani') | (names == 'Rashi'))
+print(data[(names == 'Sani') | (names == 'Rashi')])
+
+# Setting values by boolean indexing
+data[data < 0] = 0
+print(data)
+
+data[names != 'Rashi'] = 7
+print(data)
+
+# Fancy Indexing - Indexing using integer array
+arr = np.empty((8, 4))
+# print(arr)
+for i in range(8):
+    arr[i] = i
+print(arr)
