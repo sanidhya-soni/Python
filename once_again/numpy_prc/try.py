@@ -59,7 +59,8 @@ print(arr2d[1][1])
 # 3D
 arr3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
 print(arr3d[1][1])
-old_values = arr3d[1][1].copy()  # if we remove copy function then if we update the values then it will reflect in old_values also
+old_values = arr3d[1][
+    1].copy()  # if we remove copy function then if we update the values then it will reflect in old_values also
 arr3d[1][1] = 25
 print(arr3d[1])
 arr3d[1][1] = old_values
@@ -103,3 +104,67 @@ arr = np.empty((8, 4))
 for i in range(8):
     arr[i] = i
 print(arr)
+print(arr[[4, 3, 0, 6]])
+print(arr[[-3, -5, -7]])
+
+arr = np.arange(32).reshape((8, 4))
+print(arr)
+print(arr[[1, 5, 7, 2], [0, 3, 1, 2]])
+print(arr[[1, 5, 7, 2]][:, [0, 3, 1, 2]])  # Its like select following columns in this order
+
+# Transpose of a Matrix
+arr = np.arange(15).reshape((5, 3))
+print(arr)
+print(arr.T)
+
+# Dot Product
+arr = np.random.randn(6, 3)
+print(arr)
+print(np.dot(arr.T, arr))
+
+arr = np.arange(16).reshape((2, 2, 4))
+print(arr)
+print(arr.transpose((1, 0, 2)))  # Just reorder the axes in the tuple
+
+# Swap Axes
+print(arr.swapaxes(1, 2))
+
+# Universal Functions: Fast Element wise Array Functions
+arr = np.arange(10)
+print(arr)
+print(np.sqrt(arr))
+print(np.exp(arr))
+
+x = np.random.randn(8)
+print(x)
+y = np.random.randn(8)
+print(y)
+print(np.maximum(x, y))
+
+arr = np.random.randn(8) * 5
+print(arr)
+
+remainder, whole_part = np.modf(arr)
+print(remainder)
+print(whole_part)
+
+# Array-Oriented Programming with Arrays
+points = np.arange(-5, 5, 0.01)
+print(points)
+xs, ys = np.meshgrid(points, points)
+# print(xs)
+print(ys)
+
+# Understanding
+# px = np.arange(1, 101)
+# py = np.arange(1, 101)
+# print(np.meshgrid(px, py))
+
+z = np.sqrt(xs ** 2 + ys ** 2)
+print(z)
+
+import matplotlib.pyplot as plt
+
+plt.imshow(z, cmap=plt.cm.gray); plt.colorbar()
+plt.title('Image plot of $\sqrt{x^2 + y^2}$ for a grid of values')
+plt.show()
