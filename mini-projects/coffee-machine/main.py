@@ -1,4 +1,3 @@
-from replit import clear
 import Data
 
 
