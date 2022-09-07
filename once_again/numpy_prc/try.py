@@ -165,11 +165,11 @@ print(z)
 
 
 # Plot unavailable on linux
-# import matplotlib.pyplot as plt
-#
-# plt.imshow(z, cmap=plt.cm.gray); plt.colorbar()
-# plt.title('Image plot of $\sqrt{x^2 + y^2}$ for a grid of values')
-# plt.show()
+import matplotlib.pyplot as plt
+
+plt.imshow(z, cmap=plt.cm.gray); plt.colorbar()
+plt.title('Image plot of $\sqrt{x^2 + y^2}$ for a grid of values')
+plt.show()
 
 xarr = np.array([1.1, 1.2, 1.3, 1.4, 1.5])
 yarr = np.array([2.1, 2.2, 2.3, 2.4, 2.5])
@@ -269,4 +269,3 @@ mat = mat.dot(inv(mat))
 print(mat)'''
 
 samples = np.random.normal(size=(4, 4))  # Faster than normal random function of python
-

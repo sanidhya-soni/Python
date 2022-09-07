@@ -14,9 +14,6 @@ pl.ylabel("This is b")
 pl.show()
  """
 
-
-
-
 """ list = [1, 2, 3, 4, 5, 6]
 a = np.array(list)
 print(a)
@@ -24,12 +21,11 @@ print(type(a))
 print(a.shape)
 print(a.dtype) """
 
-
 # from select import select
 
 
 # class Animal:
-    
+
 
 #     def __init__(self):
 #         self.eyes = 2
@@ -45,15 +41,27 @@ print(a.dtype) """
 
 #     def swim(self):
 #         print("Swimming")
-    
+
 #     def breathe(self):
 #         super().breathe()
 #         print("Under Water")
-    
+
 
 # nemo = Fish()
 # nemo.swim()
 # print(nemo.eyes)
 # nemo.breathe()
 
-print('Ji')
+# print('Ji')
+
+
+import re
+
+
+input_str = "Python is a programming langusge"
+
+if len(input_str):
+    print(re.findall(r'P.+n', input_str))
+    print(re.findall(r'P[a-z]*n', input_str))
+else:
+    print("Invalid String")
