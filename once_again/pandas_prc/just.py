@@ -78,3 +78,18 @@ print(frame2)
 val = pd.Series([-1.2, -1.5, -1.7], index=['two', 'four', 'five'])
 frame2.debt = val
 print(frame2)
+
+# If we try assigning a column which dosent exists then it will be created
+frame2['eastern'] = frame2.state == 'Ohio'
+print(frame2)
+del frame2['eastern']  # used to delete a particular column like in a dictionary
+print(frame2)
+print(frame2.columns)
+
+# Dataframe from nested dictionary
+pop = {'Nevada': {2001: 2.4, 2002: 2.9},
+       'Ohio': {2000: 1.5, 2001: 1.7, 2002: 3.6}}
+frame3 = pd.DataFrame(pop)
+print(frame3)
+
+
